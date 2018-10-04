@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaGithubSquare, FaTwitterSquare, FaLinkedin, FaEnvelope, FaBomb } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import styles from './IconLink.css'
+import styles from './IconLink.module.scss'
 
 let links = {
   github: 'https://github.com/KaemonIsland',
