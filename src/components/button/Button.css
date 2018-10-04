@@ -1,0 +1,57 @@
+.btn {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1.4rem 4rem;
+  border-radius: 10rem;
+  transition: all 200ms;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  background-color: var(--lightTheme);
+  border: 0.2rem solid var(--mainTheme);
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0 3rem rgba(255, 255, 255, 0.4);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.4);
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 400ms;
+  background-color: var(--mainTheme);
+  color: var(--mainTheme);
+}
+
+.default {
+  composes: btn;
+  composes: default from '../../themes/themeColors.css';
+}
+.jammming {
+  composes: btn;
+  composes: jammming from '../../themes/themeColors.css';
+}
+.aboutMe {
+  composes: btn;
+  composes: aboutMe from '../../themes/themeColors.css';
+}

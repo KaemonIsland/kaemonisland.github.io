@@ -1,0 +1,16 @@
+.profileCardToon {
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: grey;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.profileCardToonSmall {
+  composes: profileCardToon;
+  padding: 2%;
+  min-width: 10rem;
+  max-width: 40%;
+}

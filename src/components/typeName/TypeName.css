@@ -1,0 +1,16 @@
+.typed {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 1160px) {
+  .shrinkText {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .shrinkText {
+    font-size: 1.5rem;
+  }
+}
