@@ -1,0 +1,38 @@
+.gridItem {
+  border-radius: 1rem;
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, .6);
+  background-color: #eee;
+  
+  @media (min-width: 48rem) {
+    &:first-child {
+      grid-area: 1 / 1 / span 2 / span 2;
+    }
+    
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
+}
+
+.gridItemImage {
+  composes: gridItem;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+}
+
+.gridItemText {
+  composes: gridItem;
+  overflow: scroll;
+  text-align: left;
+  font-size: 2rem;
+  line-height: 1.5;
+  & h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
