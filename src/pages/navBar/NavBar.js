@@ -9,7 +9,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false
+      visible: true
     }
 
     this.showNav = this.showNav.bind(this);
