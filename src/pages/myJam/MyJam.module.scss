@@ -1,0 +1,17 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, rgb(2, 23, 116) 20%, #6C41EC 80%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10rem 10rem 1fr;
+  justify-items: center;
+}
+
+.title {
+  grid-column: span 2;
+}
+
+.searchBar {
+  grid-column: span 2;
+}

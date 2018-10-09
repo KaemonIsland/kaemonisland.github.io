@@ -13,11 +13,16 @@ class NavBar extends Component {
     }
 
     this.showNav = this.showNav.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
   }
 
   showNav() {
     let toggle = this.state.visible === false ? true : false;
     this.setState({ visible: toggle });
+  }
+
+  handlePageChange(e) {
+    this.props.changePage(e.target.innerHTML);
   }
 
   render() {
@@ -41,12 +46,10 @@ class NavBar extends Component {
             <p>Front End Developer</p>
           </div>
           
-          <div className={styles.navigation}>
-            <h1 className={styles.link}>Recent Work</h1>
-            <h1 className={styles.link}>Stage Index</h1>
-            <h1 className={styles.link}>Make this (deck) Great!</h1>
-            <h1 className={styles.link}>Face It</h1>
+          <div onClick={this.handlePageChange} className={styles.navigation}>
+            <h1 className={styles.link}>My Jam</h1>
             <h1 className={styles.link}>About Me</h1>
+            <h1 className={styles.link}>More Coming Soon!</h1>
           </div>
 
           <div className={styles.links}>
