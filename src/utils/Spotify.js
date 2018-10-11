@@ -7,7 +7,7 @@ const Spotify = {
 
   getAccessToken() {
     if (accessToken) {
-      return;
+      return accessToken;
     }
     const userAccessToken = window.location.href.match(/access_token=([^&]*)/);
     const expiresIn = window.location.href.match(/expires_in=([^&]*)/);
@@ -18,7 +18,6 @@ const Spotify = {
 
       window.setTimeout(() => accessToken = '', expirationTime * 1000);
       window.history.pushState('Access Token', null, '/');
-
       return accessToken;
     } else {
       const redirectUser = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
@@ -57,6 +56,7 @@ const Spotify = {
     }
     const accessToken = Spotify.getAccessToken();
     const header = { Authorization: `Bearer ${accessToken}` };
+
     let userId;
 
     return fetch('https://api.spotify.com/v1/me', { headers: header })

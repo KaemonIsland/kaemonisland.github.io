@@ -12,7 +12,7 @@ class MyJam extends Component {
     super(props);
     this.state = {
       searchResults: [],
-      playlistName: '',
+      playlistName: 'Playlist Title',
       playlistTracks: []
     };
 
@@ -46,7 +46,7 @@ class MyJam extends Component {
   }
 
   savePlaylist() {
-    if (this.state.playlistName === '') {
+    if (this.state.playlistName === ('' || undefined) || this.state.playlistTracks.length === 0) {
       return;
     }
 
@@ -54,7 +54,7 @@ class MyJam extends Component {
     Spotify.savePlaylist(this.state.playlistName, trackUris)
       .then(() => {
         this.setState({
-          playlistName: '',
+          playlistName: 'Playlist Title',
           playlistTracks: []
         });
       });
@@ -90,7 +90,7 @@ class MyJam extends Component {
         <div className={styles.results}>
           <h1>Your Playlist...</h1>
           <Playlist
-            placeholder='Playlist title'
+            defaultValue={this.state.playlistName}
             playlistTracks={this.state.playlistTracks}
             onRemove={this.onRemove}
             onNameChange={this.updatePlaylistName}

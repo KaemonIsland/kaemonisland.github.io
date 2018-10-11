@@ -20,7 +20,7 @@ class Playlist extends Component {
       <div className={styles.playlist}>
         <input
           className={styles.searchBar}
-          placeholder={this.props.placeholder}
+          defaultValue={this.props.defaultValue}
           onChange={this.handleNameChange}
         />
         <TrackList
