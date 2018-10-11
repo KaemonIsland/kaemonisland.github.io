@@ -19,17 +19,21 @@ class SearchBar extends Component {
 
   handleTermChange(e) {
     this.setState({
-      term: e.target.value
+      term: e.target.value.toLowerCase()
     })
   }
 
   render() {
     return (
       <div className={styles.searchBar}>
-        <input placeholder='Enter a Song, Album, or Artist...'
-          onChange={this.handleTermChange} />
-        <Button onClick={this.search}
-                title='SEARCH'/>
+        <input
+          placeholder={this.props.placeholder}
+          onChange={this.handleTermChange}
+        />
+        <Button
+          onClick={this.search}
+          title={this.props.title}
+        />
       </div>
     )
   }

@@ -18,14 +18,14 @@ class AboutMe extends Component {
     return (
       <div className={styles.wrap}>
         <GridItem type='text'>
-          <h2>About Me</h2>
+          <h2 className={styles.title}>About Me</h2>
           <p>Hello, I'm Kaemon, a <strong>Self Taught</strong> developer from Salt Lake City, UT! I'm known to approach every situation with an almost scary amount of optimism! Only because I am excited to learn something new. (even if I fail)
           <br /><br />
           When I'm not coding, you can find me playing video games with my wife, and spending time with my children.</p>
         </GridItem>
         <GridItem type='image' image={kaemonAloha} alt="Kaemon with leis" />
         <GridItem type='text'>
-        <h2>What I know!</h2>
+        <h2 className={styles.title}>What I know!</h2>
         <ul>
         <li>Javascript(React)</li>
         <li>CSS3 (SASS, Modular)</li>

@@ -1,17 +1,38 @@
 .layout {
+  composes: myJam from '../../utils/colorThem.module.scss';
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to top, rgb(2, 23, 116) 20%, #6C41EC 80%);
+  background: linear-gradient(to top, var(--darkTheme) 20%, var(--lightTheme) 80%);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 10rem 10rem 1fr;
+  grid-template-rows: 10rem 11rem 1fr;
   justify-items: center;
 }
 
 .title {
+  font-size: 5rem;
   grid-column: span 2;
 }
 
 .searchBar {
   grid-column: span 2;
+}
+
+.resultsLayout {
+  justify-self: center;
+  width: 100%;
+  overflow: scroll;
+
+}
+
+.results {
+  composes: resultsLayout;
+  & h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+.playlist {
+
 }

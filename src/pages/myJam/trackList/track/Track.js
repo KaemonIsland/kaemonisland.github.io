@@ -11,9 +11,9 @@ class Track extends Component {
 
   renderAction() {
     if (this.props.isRemoval) {
-      return <a onClick={this.removeTrack}>-</a>;
+      return <a className={styles.trackAction} onClick={this.removeTrack}>-</a>;
     } else {
-      return <a onClick={this.addTrack}>+</a>;
+      return <a className={styles.trackAction} onClick={this.addTrack}>+</a>;
     }
   }
 
@@ -27,10 +27,10 @@ class Track extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h3>{this.props.name}</h3>
-          <p>{this.props.track.artist} | {this.props.track.album}</p>
+      <div className={styles.track}>
+        <div className={styles.trackInfo}>
+          <h3>{this.props.track.name}</h3>
+          <p>{this.props.track.artist} | <em>{this.props.track.album}</em></p>
         </div>
         {this.renderAction()}
       </div>

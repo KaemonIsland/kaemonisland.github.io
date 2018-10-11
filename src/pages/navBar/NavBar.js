@@ -61,7 +61,7 @@ class NavBar extends Component {
         </div>
 
         <div onClick={this.showNav} className={styles.toggle}>
-          <IconContext.Provider value={{ color: 'white', size: '5rem'}}>
+          <IconContext.Provider value={{ color: 'white', size: '2rem'}}>
             <div>
               {visible === false ? <FaArrowRight /> : <FaArrowLeft />}
             </div>
