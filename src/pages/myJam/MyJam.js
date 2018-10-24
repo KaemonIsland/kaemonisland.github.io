@@ -12,7 +12,7 @@ class MyJam extends Component {
     super(props);
     this.state = {
       searchResults: [],
-      playlistName: 'Playlist Title',
+      playlistName: '',
       playlistTracks: []
     };
 
@@ -88,11 +88,10 @@ class MyJam extends Component {
           />
         </div>
         <div className={styles.results}>
-          <h1>Your Playlist...</h1>
           <Playlist
-            defaultValue={this.state.playlistName}
+            value={this.state.playlistName}
             playlistTracks={this.state.playlistTracks}
-            onRemove={this.onRemove}
+            onRemove={this.removeTrack}
             onNameChange={this.updatePlaylistName}
             onSave={this.savePlaylist}
           />

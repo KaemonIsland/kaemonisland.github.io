@@ -17,21 +17,26 @@ class Playlist extends Component {
 
   render() {
     return (
-      <div className={styles.playlist}>
-        <input
-          className={styles.searchBar}
-          defaultValue={this.props.defaultValue}
-          onChange={this.handleNameChange}
-        />
-        <TrackList
-        tracks={this.props.playlistTracks}
-        onRemove={this.props.onRemove}
-        isRemoval={true}
-        />
-        <Button
-          onClick={this.props.onSave}
-          title="SAVE TO SPOTIFY"
-        />
+      <div>
+        <div className={styles.wrap}>
+          <input
+            className={styles.searchBar}
+            placeholder='Enter Playlist Title...'
+            value={this.props.value}
+            onChange={this.handleNameChange}
+          />
+          <Button
+            onClick={this.props.onSave}
+            title="SAVE TO SPOTIFY"
+          />
+        </div>
+        <div className={styles.playlist}>
+          <TrackList
+          tracks={this.props.playlistTracks}
+          onRemove={this.props.onRemove}
+          isRemoval={true}
+          />
+        </div>
       </div>
     )
   }

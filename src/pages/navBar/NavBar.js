@@ -49,6 +49,16 @@ class NavBar extends Component {
           <div onClick={this.handlePageChange} className={styles.navigation}>
             <h1 className={styles.link}>My Jam</h1>
             <h1 className={styles.link}>About Me</h1>
+            <h1 className={styles.link}><a
+              href='http://makethisgreat.herokuapp.com/'
+              target='_blank'>
+                Make this Great!
+            </a></h1>
+            <h1 className={styles.link}><a
+              href='http://roll-player.herokuapp.com/'
+              target='_blank'>
+                Roll Player
+            </a></h1>
             <h1 className={styles.link}>More Coming Soon!</h1>
           </div>
 

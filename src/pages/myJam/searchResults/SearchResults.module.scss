@@ -2,8 +2,10 @@
   composes: myJam from '../../../utils/colorThem.module.scss';
   margin: 0 auto;
   width: 70%;
-  height: 90%;
+  height: 60vh;
+  overflow-y: scroll;
   background: linear-gradient(to bottom, var(--mainTheme), var(--lightTheme));
   border: .1rem solid black;
+  border-radius: 1rem;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, .5);
 }

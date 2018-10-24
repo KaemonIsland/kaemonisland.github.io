@@ -44,13 +44,18 @@
 
 .link {
   font-size: 2.5rem;
+  &:hover {
+    cursor: pointer;
+    color: black;
+    background-color: rgba(255, 255, 255, .5);
+  }
+  & a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
-.link:hover {
-  cursor: pointer;
-  color: black;
-  background-color: rgba(255, 255, 255, .5);
-}
+
 
 .links {
   display: grid;
