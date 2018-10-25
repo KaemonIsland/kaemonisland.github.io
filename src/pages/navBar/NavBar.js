@@ -51,12 +51,14 @@ class NavBar extends Component {
             <h1 className={styles.link}>About Me</h1>
             <h1 className={styles.link}><a
               href='http://makethisgreat.herokuapp.com/'
-              target='_blank'>
+              target='_blank'
+              rel="noopener noreferrer">
                 Make this Great!
             </a></h1>
             <h1 className={styles.link}><a
               href='http://roll-player.herokuapp.com/'
-              target='_blank'>
+              target='_blank'
+              rel="noopener noreferrer">
                 Roll Player
             </a></h1>
             <h1 className={styles.link}>More Coming Soon!</h1>

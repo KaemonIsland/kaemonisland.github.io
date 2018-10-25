@@ -39,9 +39,6 @@ class AboutMe extends Component {
         <GridItem type='image' image={finnBaby} alt="Finn" />
         <GridItem type='image' image={finnExcited} alt="Finn" />
         <GridItem type='image' image={kaemonProfile} alt="Kaemon Lovendahl" />
-        <GridItem type='text'>
-          <p>Want to know more? <br />I'd love to hear from you!</p>
-        </GridItem>
         <GridItem type='image' image={kaemonBow} alt="Kaemon with a bow" />
         <GridItem type='image' image={flamingoAiden} alt="Aiden with Flamingos" />
       </div>

@@ -11,9 +11,9 @@ class Track extends Component {
 
   renderAction() {
     if (this.props.isRemoval) {
-      return <a className={styles.trackAction} onClick={this.removeTrack}>-</a>;
+      return <div className={styles.trackAction} onClick={this.removeTrack}>-</div>;
     } else {
-      return <a className={styles.trackAction} onClick={this.addTrack}>+</a>;
+      return <div className={styles.trackAction} onClick={this.addTrack}>+</div>;
     }
   }
 
