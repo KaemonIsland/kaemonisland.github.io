@@ -1,45 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.scss';
 
 import NavBar from './pages/navBar/NavBar';
 import AboutMe from './pages/aboutMe/AboutMe';
 import MyJam from './pages/myJam/MyJam';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      page: 'My Jam'
-    }
+export const App = () => {
 
-    this.changePage = this.changePage.bind(this);
-  }
-
-  changePage(newPage) {
-    this.setState({ page: newPage });
-  }
-
-  render() {
-    let currentPage; 
-
-    switch (this.state.page) {
-      case 'About Me':
-        currentPage = <AboutMe />;
-        break;
-      case 'My Jam':
-        currentPage = <MyJam />;
-        break;
-      default:
-        currentPage = <AboutMe />;
-        break;
-    }
-    return (
-      <div className="App">
-        <NavBar changePage={this.changePage} />
-        {currentPage}
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <NavBar />
+      <MyJam />
+      <AboutMe />
+    </div>
+  )
 }
-
-export default App;
