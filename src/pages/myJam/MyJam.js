@@ -1,104 +1,80 @@
-import React, { Component } from 'react';
-import styles from './MyJam.module.scss';
-
-import SearchBar from '../../components/searchBar/SearchBar';
-import SearchResults from './searchResults/SearchResults';
-import Playlist from './playlist/Playlist';
+import React, { useState } from 'react';
+import styled from 'styled-components'
+import { SearchBar } from '../../components/SearchBar';
+import SearchResults from './SearchResults';
+import { Playlist } from './Playlist';
 
 import Spotify from '../../utils/Spotify';
 
-class MyJam extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchResults: [],
-      playlistName: '',
-      playlistTracks: []
-    };
+const MyJamContainer = styled.section`
+  height: 100vh;
+  background: linear-gradient(to bottom,
+    ${({ theme }) => theme.palette.primary.light} 20%,
+    ${({ theme }) => theme.palette.primary.main} 80%
+  );
+  text-align: center;
+  overflow-y: scroll;
+`
 
-    this.addTrack = this.addTrack.bind(this);
-    this.removeTrack = this.removeTrack.bind(this);
-    this.updatePlaylistName = this.updatePlaylistName.bind(this);
-    this.savePlaylist = this.savePlaylist.bind(this);
-    this.search = this.search.bind(this);
-  }
+const ResultsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+`
 
-  addTrack(track) {
-    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
-      return;
+export const MyJam = () => {
+  let [results, setResults] = useState([]);
+  let [playlistName, setPlaylistName] = useState('New Playlist')
+  let [playlistTracks, setPlaylistTracks] = useState([])
+
+  let addTrack = track => {
+    if (!playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      setPlaylistTracks([...playlistTracks, track])
     }
-
-    let tracks = this.state.playlistTracks;
-    tracks.push(track);
-
-    this.setState({ playlistTracks: tracks });
   }
 
-  removeTrack(track) {
-    let tracks = this.state.playlistTracks;
-    tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
-
-    this.setState({ playlistTracks: tracks });
+  let removeTrack = ({ id }) => {
+    setPlaylistTracks(playlistTracks.filter(currentTrack => currentTrack.id !== id))
   }
 
-  updatePlaylistName(name) {
-    this.setState({ playlistName: name });
+  let updatePlaylistName = name => setPlaylistName(name);
+
+  let savePlaylist = () => {
+    const trackUris = playlistTracks.map(track => track.URI);
+    Spotify.savePlaylist(playlistName, trackUris)
+    setPlaylistName('New Playlist')
+    setPlaylistTracks([])
   }
 
-  savePlaylist() {
-    if (this.state.playlistName === ('' || undefined) || this.state.playlistTracks.length === 0) {
-      return;
-    }
-
-    const trackUris = this.state.playlistTracks.map(track => track.URI);
-    Spotify.savePlaylist(this.state.playlistName, trackUris)
-      .then(() => {
-        this.setState({
-          playlistName: 'Playlist Title',
-          playlistTracks: []
-        });
-      });
+  let search = term => {
+    Spotify.search(term).then(searchResults => {
+      setResults([...searchResults]);
+    });
   }
 
-  search(term) {
-    Spotify.search(term)
-      .then(searchResults => {
-      this.setState({ searchResults: searchResults})
-    })
-  }
-
-  render() {
-    return (
-      <div className={styles.layout}>
-        <h1 className={styles.title}>My Jam</h1>
-
-        <div className={styles.searchBar}>
-          <SearchBar
-            placeholder='Enter a Song, Album, or Artist...'
-            title='SEARCH'
-            onSearch={this.search}
-          />
-        </div>
-        <div className={styles.results}>
-          <h1>Results...</h1>
-          <SearchResults
-            searchResults={this.state.searchResults}
-            onAdd={this.addTrack}
-            onSave={this.savePlaylist}
-          />
-        </div>
-        <div className={styles.results}>
-          <Playlist
-            value={this.state.playlistName}
-            playlistTracks={this.state.playlistTracks}
-            onRemove={this.removeTrack}
-            onNameChange={this.updatePlaylistName}
-            onSave={this.savePlaylist}
-          />
-        </div>
-      </div>
-    )
-  }
+  return (
+    <MyJamContainer>
+      <h2>My Jam</h2>
+      <SearchBar
+        placeholder='Enter a Song, Album, or Artist...'
+        title='SEARCH'
+        onSearch={search}
+      />
+      <ResultsContainer>
+        <SearchResults
+          searchResults={results}
+          onAdd={addTrack}
+          onSave={savePlaylist}
+        />
+        <Playlist
+          value={playlistName}
+          playlistTracks={playlistTracks}
+          onRemove={removeTrack}
+          onNameChange={updatePlaylistName}
+          onSave={savePlaylist}
+        />
+      </ResultsContainer>
+    </MyJamContainer>
+  )
 }
-
-export default MyJam;

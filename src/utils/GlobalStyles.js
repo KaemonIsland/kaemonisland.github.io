@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
 *::after {
   box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Remove default padding */

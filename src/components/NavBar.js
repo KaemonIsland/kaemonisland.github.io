@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import IconLink from '../../components/iconLink/IconLink';
+import IconLink from './iconLink/IconLink';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import styled from 'styled-components'
-import navBackground from '../../assets/images/connectwork.png'
-import kaemonProfile from '../../assets/images/Portrait.jpg'
+import navBackground from '../assets/images/connectwork.png'
+import kaemonProfile from '../assets/images/Portrait.jpg'
+import FocusLock from 'react-focus-lock'
 
 const StyledNav = styled.nav`
   width: 30%;
@@ -12,13 +13,13 @@ const StyledNav = styled.nav`
   color: white;
   border-right: .2rem solid white;
   background-image: url(${navBackground});
-  position: absolute;
+  position: fixed;
   transition: all 300ms ease-in;
   background-repeat: repeat;
   padding: 0.5rem 0;
   text-align: center;
   box-shadow: 6px 0 12px black;
-  left: ${({ isOpen }) => isOpen ? '0' : '-18rem'};
+  left: ${({ isOpen }) => isOpen ? '0' : '-30%'};
   z-index: 500;
 `
 const NavContainer = styled.div`
@@ -32,7 +33,7 @@ const NavContainer = styled.div`
 const NavProfile = styled.div`
   border-radius: 50%;
   overflow: hidden;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
 `
 
@@ -100,63 +101,64 @@ const NavButton = styled.button`
 `
 
 export const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <StyledNav isOpen={isOpen}>
-      <NavContainer
-        id="navbar-menu"
-        role="menu"
-      >
-          <NavTitle>
-            <NavProfile>
-              <img src={kaemonProfile} alt='Kaemon Lovendahl'/>
-            </NavProfile>
-            <p>Kaemon Lovendahl</p>
-            <p>Front End Developer</p>
-          </NavTitle>
-        
-        <ul>
-          <NavLink>My Jam</NavLink>
-          <NavLink>About Me</NavLink>
-          <NavLink>
-            <a
-              href='http://makethisgreat.herokuapp.com/'
-              target='_blank'
-              rel="noopener noreferrer"
-            >
-                Make this Great!
-            </a>
-          </NavLink>
-          <NavLink>
-            <a
-              href='http://roll-player.herokuapp.com/'
-              target='_blank'
-              rel="noopener noreferrer"
-            >
-              Roll Player
-            </a>
-          </NavLink>
-          <NavLink>More Coming Soon!</NavLink>
-        </ul>
+    <FocusLock disabled={!isOpen}>
+      <StyledNav isOpen={isOpen}>
+        <NavContainer
+          id="navbar-menu"
+          role="menu"
+          tabIndex="0"
+        >
+            <NavTitle>
+              <NavProfile>
+                <img src={kaemonProfile} alt='Kaemon Lovendahl'/>
+              </NavProfile>
+              <p>Kaemon Lovendahl</p>
+              <p>Front End Developer</p>
+            </NavTitle>
+          
+          <ul>
+            <NavLink>My Jam</NavLink>
+            <NavLink>About Me</NavLink>
+            <NavLink>
+              <a
+                href='http://makethisgreat.herokuapp.com/'
+                target='_blank'
+                rel="noopener noreferrer"
+              >
+                  Make this Great!
+              </a>
+            </NavLink>
+            <NavLink>
+              <a
+                href='http://roll-player.herokuapp.com/'
+                target='_blank'
+                rel="noopener noreferrer"
+              >
+                Roll Player
+              </a>
+            </NavLink>
+            <NavLink>More Coming Soon!</NavLink>
+          </ul>
 
-        <MediaLink>
-          <IconLink link='github' />
-          <IconLink link='twitter' />
-          <IconLink link='linkedin' />
-          <IconLink link='email' />
-        </MediaLink>
-      </NavContainer>
+          <MediaLink>
+            <IconLink link='github' />
+            <IconLink link='twitter' />
+            <IconLink link='linkedin' />
+            <IconLink link='email' />
+          </MediaLink>
+        </NavContainer>
 
-      <NavButton
-        onClick={() => setIsOpen(!isOpen)}
-        role="button"
-        aria-controls="navbar-menu"
-      >
-          {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
-      </NavButton>
-    </StyledNav>
+        <NavButton
+          onClick={() => setIsOpen(!isOpen)}
+          role="button"
+          aria-controls="navbar-menu"
+        >
+            {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
+        </NavButton>
+      </StyledNav>
+    </FocusLock>
   )
 }
-
-export default NavBar;
