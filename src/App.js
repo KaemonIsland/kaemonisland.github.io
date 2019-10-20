@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 
 import NavBar from './pages/navBar/NavBar';
 import AboutMe from './pages/aboutMe/AboutMe';
@@ -10,8 +9,7 @@ export const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <MyJam />
-      <AboutMe />
+      <AboutMe/>
     </div>
   )
 }

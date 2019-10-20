@@ -1,5 +1,4 @@
 .searchBar {
-  composes: myJam from '../../utils/colorThem.module.scss';
   height: 100%;
   display: grid;
   grid-template-rows: repeat(2, 1fr);

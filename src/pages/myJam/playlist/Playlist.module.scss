@@ -4,7 +4,6 @@
 }
 
 .playlist {
-  composes: myJam from '../../../utils/colorThem.module.scss';
   margin: 0 auto;
   height: 60vh;
   width: 70%;
@@ -16,7 +15,6 @@
 }
 
 .searchBar {
-  composes: myJam from '../../../utils/colorThem.module.scss';
   height: 5rem;
   margin-right: 1rem;
   padding: 0 4rem;

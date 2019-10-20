@@ -34,7 +34,7 @@ class IconLink extends React.Component {
     return (
       <div className={styles.link} >
         <a href={links[link]} target={link === 'email' ? '_self' : '_blank'}>
-          <IconContext.Provider value={{ color: 'white', size: '5rem'}}>
+          <IconContext.Provider value={{ color: 'white', size: '3rem'}}>
             <div>
               {this.icon(link)}
             </div>

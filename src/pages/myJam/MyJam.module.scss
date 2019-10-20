@@ -1,5 +1,4 @@
 .layout {
-  composes: myJam from '../../utils/colorThem.module.scss';
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to top, var(--darkTheme) 20%, var(--lightTheme) 80%);
