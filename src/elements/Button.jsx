@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const StyledButton = styled.button`
   font-size: 1.2rem;
@@ -27,12 +27,11 @@ const StyledButton = styled.button`
   }
 `
 
-export const Button = ({ callBack, title }) => (
-  <StyledButton onClick={callBack}>
-    {title}
-  </StyledButton>
+export const Button = ({ callback, title }) => (
+  <StyledButton onClick={callback}>{title}</StyledButton>
 )
 
 Button.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  callback: PropTypes.func.isRequired,
 }

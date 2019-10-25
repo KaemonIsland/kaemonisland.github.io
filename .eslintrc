@@ -1,0 +1,6 @@
+{
+  "extends": ["warlock"],
+  "rules": {
+    "react/require-default-props": 0
+  }
+}

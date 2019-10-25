@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const StyledInput = styled.input`
   width: 20rem;
-  border: .1rem solid white;
+  border: 0.1rem solid white;
   border: 1px solid black;
   padding: 0 0.5rem;
   border-radius: 0.5rem;
@@ -12,15 +13,21 @@ const StyledInput = styled.input`
   &:focus,
   &:active {
     border: 1px solid ${({ theme }) => theme.palette.primary.main};
-    box-shadow: 0 .3rem .6rem rgba(0, 0, 0, .8);
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.8);
     transform: translateY(-3px);
   }
 `
 
-export const Input = ({ value, callback, placeholder }) => (
+export const Input = ({ value, callback, placeholder = '' }) => (
   <StyledInput
     value={value}
     onChange={({ target }) => callback(target)}
     placeholder={placeholder}
   />
 )
+
+Input.propTypes = {
+  value: PropTypes.oneOfType(PropTypes.string, PropTypes.number).isRequired,
+  callback: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+}
