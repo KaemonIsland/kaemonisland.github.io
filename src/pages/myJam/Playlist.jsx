@@ -34,7 +34,7 @@ export const Playlist = ({
         callback={handleNameChange}
       />
       <TrackList tracks={playlistTracks} onRemove={onRemove} isRemoval />
-      <Button onClick={onSave} title="SAVE TO SPOTIFY" />
+      <Button callback={onSave} title="SAVE TO SPOTIFY" />
     </PlaylistContainer>
   )
 }

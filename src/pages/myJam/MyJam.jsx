@@ -70,13 +70,9 @@ export const MyJam = () => {
         onSearch={search}
       />
       <ResultsContainer>
-        <SearchResults
-          searchResults={results}
-          onAdd={addTrack}
-          onSave={savePlaylist}
-        />
+        <SearchResults searchResults={results} onAdd={addTrack} />
         <Playlist
-          value={playlistName}
+          playlist={playlistName}
           playlistTracks={playlistTracks}
           onRemove={removeTrack}
           onNameChange={updatePlaylistName}
