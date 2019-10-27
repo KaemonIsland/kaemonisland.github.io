@@ -8,12 +8,16 @@ const StyledSearch = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 1.5rem 0;
 `
 
 export const SearchBar = ({ onSearch }) => {
   const [term, setTerm] = useState('')
 
-  const search = () => onSearch(term)
+  const search = () => {
+    onSearch(term)
+    setTerm('')
+  }
 
   const handleTermChange = ({ value }) => setTerm(value)
 
@@ -23,8 +27,9 @@ export const SearchBar = ({ onSearch }) => {
         placeholder="Enter a Song, Album, or Artist"
         value={term}
         callback={handleTermChange}
+        shadowColor="primary"
       />
-      <Button onClick={search} title="SEARCH" />
+      <Button callback={search} title="SEARCH" />
     </StyledSearch>
   )
 }

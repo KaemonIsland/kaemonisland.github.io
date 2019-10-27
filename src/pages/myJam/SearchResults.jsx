@@ -7,16 +7,20 @@ const SeachContainer = styled.div`
   padding: 0.5rem;
   margin: 0 auto;
   width: 40%;
-  background-color: ${({ theme }) => theme.palette.primary.main};
-  border: 0.1rem solid black;
+  max-height: 30rem;
+  background-color: ${({ theme }) => theme.palette.primary.light};
+  border: 2px solid black;
   border-radius: 1rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
-  overflow-y: scroll;
-  scrollbar-width: none;
+  box-shadow: ${({ theme }) => theme.shadow.primary.medium};
+  & > h3 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+  }
 `
 
 export const SearchResults = ({ searchResults, onAdd }) => (
   <SeachContainer>
+    <h3>Search Results</h3>
     <TrackList tracks={searchResults} onAdd={onAdd} isRemoval={false} />
   </SeachContainer>
 )

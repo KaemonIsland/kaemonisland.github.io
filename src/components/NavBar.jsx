@@ -79,7 +79,7 @@ const NavButton = styled.button`
   transform: translateY(-50%);
   top: 50%;
   left: 100%;
-  height: 8rem;
+  height: 6rem;
   width: 3rem;
   background-color: ${({ theme }) => theme.palette.primary.light};
   color: white;

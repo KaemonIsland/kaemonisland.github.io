@@ -1,6 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './Track.module.scss'
+import styled from 'styled-components'
+
+const TrackContainer = styled.div`
+  display: flex;
+  margin: 0 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  & > button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+`
+
+const TrackInfo = styled.div`
+  width: 85%;
+  min-width: 0;
+  text-align: left;
+  & * {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  & h5 {
+    font-size: 1.1rem;
+  }
+`
 
 // prettier-ignore
 export const Track = ({
@@ -33,17 +59,17 @@ export const Track = ({
   }
 
   return (
-    <div className={styles.track}>
-      <div className={styles.trackInfo}>
-        <h3>{track.name}</h3>
+    <TrackContainer>
+      <TrackInfo>
+        <h5 title={track.name}>{track.name}</h5>
         <p>
           {track.artist}
           {' | '}
           <em>{track.album}</em>
         </p>
-      </div>
+      </TrackInfo>
       {renderAction()}
-    </div>
+    </TrackContainer>
   )
 }
 

@@ -12,6 +12,12 @@ const MyJamContainer = styled.section`
   background-color: white;
   text-align: center;
   overflow-y: scroll;
+  scrollbar-width: none;
+  & h2 {
+    width: 40%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+  }
 `
 
 const ResultsContainer = styled.div`

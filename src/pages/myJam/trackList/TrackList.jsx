@@ -1,7 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './TrackList.module.scss'
+import styled from 'styled-components'
 import { Track } from './track/Track'
+
+const TrackListContainer = styled.div`
+  max-height: 20rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  & div:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+`
 
 // prettier-ignore
 export const TrackList = ({
@@ -10,7 +19,7 @@ export const TrackList = ({
   onRemove,
   isRemoval,
 }) => (
-  <div className={styles.trackList}>
+  <TrackListContainer>
     {tracks.map(track => (
       <Track
         track={track}
@@ -20,7 +29,7 @@ export const TrackList = ({
         isRemoval={isRemoval}
       />
     ))}
-  </div>
+  </TrackListContainer>
 )
 
 TrackList.propTypes = {
@@ -29,5 +38,3 @@ TrackList.propTypes = {
   onRemove: PropTypes.func,
   isRemoval: PropTypes.func,
 }
-
-export default TrackList
