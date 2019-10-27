@@ -1,6 +1,9 @@
 {
   "extends": ["warlock"],
   "rules": {
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "arrow-parens": [2, "as-needed"],
+    "prettier/prettier": 0,
+    "react/jsx-one-expression-per-line": 0,
   }
 }

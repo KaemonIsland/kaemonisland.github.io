@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { SearchBar } from '../../components/SearchBar';
-import SearchResults from './SearchResults';
-import { Playlist } from './Playlist';
+import { SearchBar } from '../../components/SearchBar'
+import { SearchResults } from './SearchResults'
+import { Playlist } from './Playlist'
 
-import Spotify from '../../utils/Spotify';
+import Spotify from '../../utils/Spotify'
 
 const MyJamContainer = styled.section`
   height: 100vh;
-  background: linear-gradient(to bottom,
-    ${({ theme }) => theme.palette.primary.light} 20%,
-    ${({ theme }) => theme.palette.primary.main} 80%
-  );
+  color: black;
+  background-color: white;
   text-align: center;
   overflow-y: scroll;
 `
@@ -24,41 +22,45 @@ const ResultsContainer = styled.div`
 `
 
 export const MyJam = () => {
-  let [results, setResults] = useState([]);
-  let [playlistName, setPlaylistName] = useState('New Playlist')
-  let [playlistTracks, setPlaylistTracks] = useState([])
+  const [results, setResults] = useState([])
+  const [playlistName, setPlaylistName] = useState('New Playlist')
+  const [playlistTracks, setPlaylistTracks] = useState([])
 
-  let addTrack = track => {
+  const addTrack = track => {
     if (!playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
       setPlaylistTracks([...playlistTracks, track])
     }
   }
 
-  let removeTrack = ({ id }) => {
-    setPlaylistTracks(playlistTracks.filter(currentTrack => currentTrack.id !== id))
+  const removeTrack = ({ id }) => {
+    // prettier-ignore
+    setPlaylistTracks(
+      playlistTracks
+        .filter(currentTrack => currentTrack.id !== id),
+    )
   }
 
-  let updatePlaylistName = name => setPlaylistName(name);
+  const updatePlaylistName = name => setPlaylistName(name)
 
-  let savePlaylist = () => {
-    const trackUris = playlistTracks.map(track => track.URI);
+  const savePlaylist = () => {
+    const trackUris = playlistTracks.map(track => track.URI)
     Spotify.savePlaylist(playlistName, trackUris)
     setPlaylistName('New Playlist')
     setPlaylistTracks([])
   }
 
-  let search = term => {
+  const search = term => {
     Spotify.search(term).then(searchResults => {
-      setResults([...searchResults]);
-    });
+      setResults([...searchResults])
+    })
   }
 
   return (
     <MyJamContainer>
       <h2>My Jam</h2>
       <SearchBar
-        placeholder='Enter a Song, Album, or Artist...'
-        title='SEARCH'
+        placeholder="Enter a Song, Album, or Artist..."
+        title="SEARCH"
         onSearch={search}
       />
       <ResultsContainer>

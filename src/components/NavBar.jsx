@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import IconLink from './iconLink/IconLink';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import React, { useState } from 'react'
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import styled from 'styled-components'
+import FocusLock from 'react-focus-lock'
+import { IconLink } from './iconLink/IconLink'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
-import FocusLock from 'react-focus-lock'
 
 const StyledNav = styled.nav`
   width: 30%;
   height: 100%;
   font-size: 2rem;
   color: white;
-  border-right: .2rem solid white;
+  border-right: 0.2rem solid white;
   background-image: url(${navBackground});
   position: fixed;
   transition: all 300ms ease-in;
@@ -19,7 +19,7 @@ const StyledNav = styled.nav`
   padding: 0.5rem 0;
   text-align: center;
   box-shadow: 6px 0 12px black;
-  left: ${({ isOpen }) => isOpen ? '0' : '-30%'};
+  left: ${({ isOpen }) => (isOpen ? '0' : '-30%')};
   z-index: 500;
 `
 const NavContainer = styled.div`
@@ -43,14 +43,14 @@ const NavTitle = styled.div`
     font-weight: 600;
   }
   & > p:first-of-type {
-    border-bottom: .1rem solid white;
+    border-bottom: 0.1rem solid white;
   }
 `
 
 const NavLink = styled.li`
   font-size: 1.5rem;
-  cursor: pointer;
   & a {
+    cursor: pointer;
     transition: all 200ms linear;
     color: white;
     text-decoration: none;
@@ -61,7 +61,7 @@ const NavLink = styled.li`
     &:active,
     &:hover {
       color: black;
-      background-color: rgba(255, 255, 255, .5);
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
 `
@@ -106,35 +106,35 @@ export const NavBar = () => {
   return (
     <FocusLock disabled={!isOpen}>
       <StyledNav isOpen={isOpen}>
-        <NavContainer
-          id="navbar-menu"
-          role="menu"
-          tabIndex="0"
-        >
-            <NavTitle>
-              <NavProfile>
-                <img src={kaemonProfile} alt='Kaemon Lovendahl'/>
-              </NavProfile>
-              <p>Kaemon Lovendahl</p>
-              <p>Front End Developer</p>
-            </NavTitle>
-          
+        <NavContainer id="navbar-menu" role="menu" tabIndex="0">
+          <NavTitle>
+            <NavProfile>
+              <img src={kaemonProfile} alt="Kaemon Lovendahl" />
+            </NavProfile>
+            <p>Kaemon Lovendahl</p>
+            <p>Front End Developer</p>
+          </NavTitle>
+
           <ul>
-            <NavLink>My Jam</NavLink>
-            <NavLink>About Me</NavLink>
+            <NavLink>
+              <a href="localhost:3000">My Jam</a>
+            </NavLink>
+            <NavLink>
+              <a href="localhost:3000">About Me</a>
+            </NavLink>
             <NavLink>
               <a
-                href='http://makethisgreat.herokuapp.com/'
-                target='_blank'
+                href="http://makethisgreat.herokuapp.com/"
+                target="_blank"
                 rel="noopener noreferrer"
               >
-                  Make this Great!
+                Make this Great!
               </a>
             </NavLink>
             <NavLink>
               <a
-                href='http://roll-player.herokuapp.com/'
-                target='_blank'
+                href="http://roll-player.herokuapp.com/"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Roll Player
@@ -144,10 +144,10 @@ export const NavBar = () => {
           </ul>
 
           <MediaLink>
-            <IconLink link='github' />
-            <IconLink link='twitter' />
-            <IconLink link='linkedin' />
-            <IconLink link='email' />
+            <IconLink link="github" />
+            <IconLink link="twitter" />
+            <IconLink link="linkedin" />
+            <IconLink link="email" />
           </MediaLink>
         </NavContainer>
 
@@ -156,7 +156,7 @@ export const NavBar = () => {
           role="button"
           aria-controls="navbar-menu"
         >
-            {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
+          {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
         </NavButton>
       </StyledNav>
     </FocusLock>

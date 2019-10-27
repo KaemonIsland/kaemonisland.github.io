@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Button, Input } from '../elements'
 
@@ -10,11 +11,11 @@ const StyledSearch = styled.div`
 `
 
 export const SearchBar = ({ onSearch }) => {
-  let [term, setTerm] = useState('')
+  const [term, setTerm] = useState('')
 
-  let search = () => onSearch(term)
+  const search = () => onSearch(term)
 
-  let handleTermChange = ({ value }) => setTerm(value);
+  const handleTermChange = ({ value }) => setTerm(value)
 
   return (
     <StyledSearch>
@@ -23,12 +24,11 @@ export const SearchBar = ({ onSearch }) => {
         value={term}
         callback={handleTermChange}
       />
-      <Button
-        onClick={search}
-        title="SEARCH"
-      />
+      <Button onClick={search} title="SEARCH" />
     </StyledSearch>
   )
 }
 
-export default SearchBar;
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+}

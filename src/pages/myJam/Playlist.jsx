@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import TrackList from './trackList/TrackList'
+import { TrackList } from './trackList/TrackList'
 import { Button, Input } from '../../elements'
 
 const PlaylistContainer = styled.div`
@@ -9,10 +9,10 @@ const PlaylistContainer = styled.div`
   padding: 0.5rem;
   margin: 0 auto;
   width: 40%;
-  background-color: white;
-  border: 0.1rem solid black;
+  background-color: ${({ theme }) => theme.palette.primary.light};
+  border: 2px solid black;
   border-radius: 1rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.shadow.primary.medium};
 `
 
 export const Playlist = ({
