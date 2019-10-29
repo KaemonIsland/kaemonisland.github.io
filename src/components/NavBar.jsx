@@ -6,8 +6,9 @@ import { IconLink } from './iconLink/IconLink'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
 
+// prettier-ignore
 const StyledNav = styled.nav`
-  width: 30%;
+  width: 18rem;
   height: 100%;
   font-size: 2rem;
   color: white;
@@ -18,8 +19,10 @@ const StyledNav = styled.nav`
   background-repeat: repeat;
   padding: 0.5rem 0;
   text-align: center;
-  box-shadow: 6px 0 12px black;
-  left: ${({ isOpen }) => (isOpen ? '0' : '-30%')};
+  box-shadow: 6px 0 8px black;
+  left: ${({ isOpen }) => isOpen
+    ? '0'
+    : '-18rem'};
   z-index: 500;
 `
 const NavContainer = styled.div`
@@ -33,7 +36,7 @@ const NavContainer = styled.div`
 const NavProfile = styled.div`
   border-radius: 50%;
   overflow: hidden;
-  width: 50%;
+  width: 8rem;
   margin: 0 auto;
 `
 
@@ -77,26 +80,27 @@ const NavButton = styled.button`
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);
-  top: 50%;
+  top: 10%;
   left: 100%;
-  height: 6rem;
-  width: 3rem;
+  height: 5.5rem;
+  width: 2.5rem;
   background-color: ${({ theme }) => theme.palette.primary.light};
   color: white;
-  border: .2rem solid white;
-  box-shadow: 6px 0 12px black;
+  border: 2px solid white;
+  box-shadow: 6px 0 8px black;
   border-bottom-right-radius: 1rem;
   border-top-right-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 200ms linear;
+  padding: 5px;
   &:hover,
   &:active,
   &:focus {
     background-color: white;
     color: ${({ theme }) => theme.palette.primary.light};
-    border .2rem solid ${({ theme }) => theme.palette.primary.light}
+    border 2px solid ${({ theme }) => theme.palette.primary.light}
   }
 `
 
