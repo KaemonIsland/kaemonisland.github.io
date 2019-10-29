@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const StyledInput = styled.input(({ theme, shadowColor }) => ({
-  width: '20rem',
+const StyledInput = styled.input(({ theme, shadowColor, width }) => ({
+  width,
+  maxWidth: '100%',
   border: '1px solid black',
   padding: '0 0.5rem',
   borderRadius: '0.5rem',
@@ -22,18 +23,26 @@ export const Input = ({
   callback,
   placeholder = '',
   shadowColor = 'gray',
-}) => (
-  <StyledInput
-    value={value}
-    onChange={({ target }) => callback(target)}
-    placeholder={placeholder}
-    shadowColor={shadowColor}
-  />
-)
+  width,
+}) => {
+  const inputStyles = {
+    width,
+    shadowColor,
+  }
+  return (
+    <StyledInput
+      value={value}
+      onChange={({ target }) => callback(target)}
+      placeholder={placeholder}
+      {...inputStyles}
+    />
+  )
+}
 
 Input.propTypes = {
   value: PropTypes.oneOfType(PropTypes.string, PropTypes.number).isRequired,
   callback: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   shadowColor: PropTypes.oneOf(['gray', 'primary']),
+  width: PropTypes.number,
 }

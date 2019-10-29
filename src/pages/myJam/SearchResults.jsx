@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { TrackList } from './trackList/TrackList'
 
-const SeachContainer = styled.div`
+const SearchContainer = styled.div`
   padding: 0.5rem;
-  margin: 0 auto;
+  margin: 0 1.5rem;
   width: 40%;
+  min-width: 20rem;
   max-height: 30rem;
   background-color: ${({ theme }) => theme.palette.primary.light};
   border: 2px solid black;
@@ -19,10 +20,10 @@ const SeachContainer = styled.div`
 `
 
 export const SearchResults = ({ searchResults, onAdd }) => (
-  <SeachContainer>
+  <SearchContainer>
     <h3>Search Results</h3>
     <TrackList tracks={searchResults} onAdd={onAdd} isRemoval={false} />
-  </SeachContainer>
+  </SearchContainer>
 )
 
 export default SearchResults

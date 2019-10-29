@@ -14,9 +14,8 @@ const MyJamContainer = styled.section`
   overflow-y: scroll;
   scrollbar-width: none;
   & h2 {
-    width: 40%;
-    margin: 0 auto;
-    border-bottom: 1px solid black;
+    margin: 0 2rem;
+    border-bottom: 3px solid black;
   }
 `
 
@@ -24,7 +23,6 @@ const ResultsContainer = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
 `
 
 export const MyJam = () => {

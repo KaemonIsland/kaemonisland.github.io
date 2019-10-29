@@ -7,8 +7,9 @@ const StyledSearch = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   text-align: center;
-  margin: 1.5rem 0;
+  margin: 1.5rem;
 `
 
 export const SearchBar = ({ onSearch }) => {
@@ -28,6 +29,7 @@ export const SearchBar = ({ onSearch }) => {
         value={term}
         callback={handleTermChange}
         shadowColor="primary"
+        width="20rem"
       />
       <Button callback={search} title="SEARCH" />
     </StyledSearch>

@@ -7,8 +7,9 @@ import { Button, Input } from '../../elements'
 const PlaylistContainer = styled.div`
   position: relative;
   padding: 0.5rem;
-  margin: 0 auto;
+  margin: 1.5rem;
   width: 40%;
+  min-width: 20rem;
   background-color: ${({ theme }) => theme.palette.primary.light};
   border: 2px solid black;
   border-radius: 1rem;

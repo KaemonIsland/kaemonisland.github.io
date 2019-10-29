@@ -80,10 +80,10 @@ const NavButton = styled.button`
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);
-  top: 10%;
+  top: 5%;
   left: 100%;
-  height: 5.5rem;
-  width: 2.5rem;
+  height: 3rem;
+  width: 3rem;
   background-color: ${({ theme }) => theme.palette.primary.light};
   color: white;
   border: 2px solid white;
