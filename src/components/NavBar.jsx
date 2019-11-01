@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import FocusLock from 'react-focus-lock'
+import { Link } from 'react-router-dom'
 import { IconLink } from './iconLink/IconLink'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
@@ -104,6 +105,30 @@ const NavButton = styled.button`
   }
 `
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+`
+
+const Background = styled.div`
+  background-color: black;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 450;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+  animation-name: ${fadeIn};
+  animation-duration: 300ms;
+`
+
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -121,10 +146,10 @@ export const NavBar = () => {
 
           <ul>
             <NavLink>
-              <a href="localhost:3000">My Jam</a>
+              <Link to="/myjam">My Jam</Link>
             </NavLink>
             <NavLink>
-              <a href="localhost:3000">About Me</a>
+              <Link to="/about">About Me</Link>
             </NavLink>
             <NavLink>
               <a
@@ -163,6 +188,7 @@ export const NavBar = () => {
           {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
         </NavButton>
       </StyledNav>
+      {isOpen && <Background onClick={() => setIsOpen(false)} />}
     </FocusLock>
   )
 }
