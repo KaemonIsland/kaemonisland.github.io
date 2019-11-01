@@ -34,6 +34,11 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0 1.5rem;
 }
 
 /* Set core body defaults */
