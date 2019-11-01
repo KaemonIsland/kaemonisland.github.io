@@ -41,7 +41,7 @@ export const IconLink = ({ link }) => {
   return (
     <div className={styles.link}>
       <a href={links[link]} target={link === 'email' ? '_self' : '_blank'}>
-        <IconContext.Provider value={{ color: 'white', size: '3' }}>
+        <IconContext.Provider value={{ color: 'white', size: '40' }}>
           <div>{icon}</div>
         </IconContext.Provider>
       </a>

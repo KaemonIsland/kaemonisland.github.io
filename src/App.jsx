@@ -2,9 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import { NavBar } from './components/NavBar'
-import { AboutMe } from './pages/aboutMe/AboutMe'
-import { MyJam } from './pages/myJam/MyJam'
-import { NotFound } from './pages/notFound/NotFound'
+import { AboutMe, MyJam, NotFound } from './pages'
 
 export const App = () => (
   <div className="App">
