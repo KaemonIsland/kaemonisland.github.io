@@ -53,14 +53,14 @@ const InfoItem = styled.div`
 
 const infoItems = [
   { text: 'Kaemon Lovendahl', title: 'Player Name' },
-  { text: 'Warlock, 25', title: 'Class & Level' },
+  { text: 'Warlock - 25', title: 'Class & Level' },
   { text: '2 years', title: 'Experience' },
-  { text: 'Villager', title: 'Background' },
+  { text: 'Explorer', title: 'Background' },
   { text: 'Human', title: 'Race' },
   { text: 'Lawful Good', title: 'Alignment' },
 ]
 
-export const CharacterName = () => (
+export const Name = () => (
   <CharNameHeader>
     <TheLogicWarlock>
       <h5>The Logic Warlock</h5>

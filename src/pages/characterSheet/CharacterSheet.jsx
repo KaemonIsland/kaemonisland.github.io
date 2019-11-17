@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CharacterName } from './CharacterName'
+import { Name } from './Name'
+import { Stats } from './Stats'
 
 const CharacterSheetContainer = styled.section`
   max-width: 60rem;
@@ -12,10 +13,6 @@ const CharacterSheetContainer = styled.section`
   grid-template-rows: repeat(auto-fill, minmax(14rem, 1fr));
   grid-gap: 1rem;
   border-radius: 0.5rem;
-`
-
-const Stats = styled.div`
-  background-color: red;
 `
 
 const Health = styled.div`
@@ -40,8 +37,8 @@ const Equipment = styled.div`
 
 export const CharacterSheet = () => (
   <CharacterSheetContainer>
-    <CharacterName />
-    <Stats>Stats</Stats>
+    <Name />
+    <Stats />
     <Health>Health</Health>
     <Personality>Personality</Personality>
     <Spells>Spells</Spells>

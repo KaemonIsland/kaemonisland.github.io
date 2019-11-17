@@ -1,2 +1,3 @@
 export * from './CharacterSheet'
-export * from './CharacterName'
+export * from './Name'
+export * from './Stats'
