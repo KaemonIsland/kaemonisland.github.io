@@ -16,14 +16,15 @@ const StyledNav = styled.nav`
   border-right: 0.2rem solid white;
   background-image: url(${navBackground});
   position: fixed;
+  top: 0;
+  left: ${({ isOpen }) => isOpen
+    ? '0'
+    : '-18rem'};
   transition: all 300ms ease-in;
   background-repeat: repeat;
   padding: 0.5rem 0;
   text-align: center;
   box-shadow: 6px 0 8px black;
-  left: ${({ isOpen }) => isOpen
-    ? '0'
-    : '-18rem'};
   z-index: 500;
 `
 const NavContainer = styled.div`
@@ -81,7 +82,7 @@ const NavButton = styled.button`
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);
-  top: 5%;
+  top: 30px;
   left: 100%;
   height: 3rem;
   width: 3rem;
