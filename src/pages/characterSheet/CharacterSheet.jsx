@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Name } from './Name'
 import { Stats } from './Stats'
+import { Personality } from './Personality'
 
 const CharacterSheetContainer = styled.section`
   max-width: 60rem;
@@ -13,14 +14,6 @@ const CharacterSheetContainer = styled.section`
   grid-template-rows: repeat(auto-fill, minmax(14rem, 1fr));
   grid-gap: 1rem;
   border-radius: 0.5rem;
-`
-
-const Health = styled.div`
-  background-color: yellow;
-`
-
-const Personality = styled.div`
-  background-color: orange;
 `
 const Spells = styled.div`
   background-color: green;
@@ -39,8 +32,7 @@ export const CharacterSheet = () => (
   <CharacterSheetContainer>
     <Name />
     <Stats />
-    <Health>Health</Health>
-    <Personality>Personality</Personality>
+    <Personality />
     <Spells>Spells</Spells>
     <Traits>Traits</Traits>
     <Languages>Languages</Languages>

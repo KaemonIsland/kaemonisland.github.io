@@ -55,7 +55,7 @@ const infoItems = [
   { text: 'Kaemon Lovendahl', title: 'Player Name' },
   { text: 'Warlock - 25', title: 'Class & Level' },
   { text: '2 years', title: 'Experience' },
-  { text: 'Explorer', title: 'Background' },
+  { text: 'Student', title: 'Background' },
   { text: 'Human', title: 'Race' },
   { text: 'Lawful Good', title: 'Alignment' },
 ]
