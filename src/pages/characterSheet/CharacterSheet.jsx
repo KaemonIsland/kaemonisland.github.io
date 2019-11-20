@@ -7,7 +7,7 @@ import { Personality } from './Personality'
 const CharacterSheetContainer = styled.section`
   max-width: 60rem;
   margin: 1rem auto;
-  padding: 0.5rem;
+  padding: 1rem;
   border 1px solid black;
   box-shadow: ${({ theme }) => theme.shadow.gray.medium};
   display: grid;
