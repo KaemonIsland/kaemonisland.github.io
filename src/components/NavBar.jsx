@@ -153,6 +153,9 @@ export const NavBar = () => {
               <Link to="/about">About Me</Link>
             </NavLink>
             <NavLink>
+              <Link to="/character-sheet">Character Sheet</Link>
+            </NavLink>
+            <NavLink>
               <a
                 href="http://makethisgreat.herokuapp.com/"
                 target="_blank"

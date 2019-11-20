@@ -17,7 +17,7 @@ const TheLogicWarlock = styled.div`
   font-size: 1.5rem;
   margin: 1rem 0 1.5rem 0;
   & h5 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   }
   & p {
@@ -53,14 +53,14 @@ const InfoItem = styled.div`
 
 const infoItems = [
   { text: 'Kaemon Lovendahl', title: 'Player Name' },
-  { text: 'Warlock, 25', title: 'Class & Level' },
+  { text: 'Warlock - 25', title: 'Class & Level' },
   { text: '2 years', title: 'Experience' },
-  { text: 'Villager', title: 'Background' },
+  { text: 'Student', title: 'Background' },
   { text: 'Human', title: 'Race' },
   { text: 'Lawful Good', title: 'Alignment' },
 ]
 
-export const CharacterName = () => (
+export const Name = () => (
   <CharNameHeader>
     <TheLogicWarlock>
       <h5>The Logic Warlock</h5>

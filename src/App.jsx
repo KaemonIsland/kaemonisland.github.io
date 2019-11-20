@@ -10,7 +10,7 @@ export const App = () => (
     <Switch>
       <Route exact path="/" component={MyJam} />
       <Route exact path="/myjam" component={MyJam} />
-      <Route exact path="/about" component={CharacterSheet} />
+      <Route exact path="/character-sheet" component={CharacterSheet} />
       <Route component={NotFound} />
     </Switch>
   </div>
