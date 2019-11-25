@@ -37,7 +37,7 @@ export const Image = ({
 Image.propTypes = {
   image: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  width: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
-  height: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   alignment: PropTypes.oneOf(['left', 'center', 'right']),
 }

@@ -8,7 +8,7 @@ const DisclosureContainer = styled.div`
 `
 
 const DisclosureButton = styled.button`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   background-color: transparent;
   border: none;

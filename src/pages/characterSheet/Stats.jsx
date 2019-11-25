@@ -56,8 +56,8 @@ const statsScores = [
 
 export const Stats = () => (
   <StatsContainer>
-    {statsScores.map(({ name, score, modifier }) => (
-      <AbilityContainer>
+    {statsScores.map(({ name, score, modifier }, i) => (
+      <AbilityContainer key={i}>
         <AbilityName>{name}</AbilityName>
         <AbilityScore>{score}</AbilityScore>
         <AbilityModifier>{modifier}</AbilityModifier>

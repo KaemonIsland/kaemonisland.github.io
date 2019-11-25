@@ -40,7 +40,7 @@ export const Input = ({
 }
 
 Input.propTypes = {
-  value: PropTypes.oneOfType(PropTypes.string, PropTypes.number).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   callback: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   shadowColor: PropTypes.oneOf(['gray', 'primary']),

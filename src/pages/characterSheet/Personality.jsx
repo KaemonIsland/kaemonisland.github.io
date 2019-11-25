@@ -6,7 +6,7 @@ const PersonalityContainer = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.light};
   border-radius: 0.5rem;
   box-shadow: ${({ theme }) => theme.shadow.gray.small};
-  padding: 0.5rem;
+  padding: 0.25rem;
   margin-bottom: 0.5rem;
   & h5 {
     text-transform: uppercase;
@@ -61,12 +61,12 @@ const personalityItems = [
 
 export const Personality = () => (
   <>
-    {personalityItems.map(({ title, content }) => (
-      <PersonalityContainer>
+    {personalityItems.map(({ title, content }, i) => (
+      <PersonalityContainer key={i}>
         <Disclosure title={title}>
           <ul>
-            {content.map(text => (
-              <PersonalityItem>{text}</PersonalityItem>
+            {content.map((text, index) => (
+              <PersonalityItem key={index}>{text}</PersonalityItem>
             ))}
           </ul>
         </Disclosure>

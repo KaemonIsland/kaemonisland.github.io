@@ -67,8 +67,8 @@ export const Name = () => (
       <p>Character Name</p>
     </TheLogicWarlock>
     <InfoContainer>
-      {infoItems.map(({ text, title }) => (
-        <InfoItem>
+      {infoItems.map(({ text, title }, i) => (
+        <InfoItem key={i}>
           <span>{title}</span>
           <p>{text}</p>
         </InfoItem>
