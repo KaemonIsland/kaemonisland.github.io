@@ -3,6 +3,7 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import styled, { keyframes } from 'styled-components'
 import FocusLock from 'react-focus-lock'
 import { Link } from 'react-router-dom'
+import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 import { IconLink } from './iconLink/IconLink'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
@@ -118,13 +119,13 @@ const fadeIn = keyframes`
 
 const Background = styled.div`
   background-color: black;
-  background-position: center;
+  background-position: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 450;
-  width: 100vw;
-  height: 100vh;
+  width: 150%;
+  height: 150%;
   opacity: 0.5;
   animation-name: ${fadeIn};
   animation-duration: 300ms;
@@ -132,6 +133,16 @@ const Background = styled.div`
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const openNav = () => {
+    setIsOpen(true)
+    disablePageScroll()
+  }
+
+  const closeNav = () => {
+    setIsOpen(false)
+    enablePageScroll()
+  }
 
   return (
     <FocusLock disabled={!isOpen}>
@@ -147,7 +158,10 @@ export const NavBar = () => {
 
           <ul>
             <NavLink>
-              <Link to="/myjam">My Jam</Link>
+              <Link to="/">Home</Link>
+            </NavLink>
+            <NavLink>
+              <Link to="/projects">Projects</Link>
             </NavLink>
             <NavLink>
               <Link to="/about">About Me</Link>
@@ -155,25 +169,6 @@ export const NavBar = () => {
             <NavLink>
               <Link to="/character-sheet">Character Sheet</Link>
             </NavLink>
-            <NavLink>
-              <a
-                href="http://makethisgreat.herokuapp.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Make this Great!
-              </a>
-            </NavLink>
-            <NavLink>
-              <a
-                href="http://roll-player.herokuapp.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Roll Player
-              </a>
-            </NavLink>
-            <NavLink>More Coming Soon!</NavLink>
           </ul>
 
           <MediaLink>
@@ -185,14 +180,14 @@ export const NavBar = () => {
         </NavContainer>
 
         <NavButton
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={isOpen ? closeNav : openNav}
           role="button"
           aria-controls="navbar-menu"
         >
           {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
         </NavButton>
       </StyledNav>
-      {isOpen && <Background onClick={() => setIsOpen(false)} />}
+      {isOpen && <Background onClick={closeNav} />}
     </FocusLock>
   )
 }
