@@ -33,12 +33,14 @@ const Banner = styled.h1`
   color: white;
   font-size: 3.5rem;
   font-weight: 300;
+  padding: 0.5rem;
 `
 
 const Title = styled.h2`
   color: white;
   font-weight: 300;
   font-size: 2rem;
+  padding: 0.5rem;
 `
 
 export const Home = () => {

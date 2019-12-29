@@ -5,6 +5,7 @@ import FocusLock from 'react-focus-lock'
 import { Link } from 'react-router-dom'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 import { IconLink } from './IconLink'
+import { useAlternatingText } from '../hooks'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
 
@@ -153,6 +154,15 @@ const navLinks = [
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [title] = useAlternatingText([
+    'Logic Warlock',
+    'Web Developer',
+    'Front End Dev',
+    'Dungeon Master',
+    'React Developer',
+    'Father',
+    'Rails Developer',
+  ])
 
   const openNav = () => {
     setIsOpen(true)
@@ -174,7 +184,7 @@ export const NavBar = () => {
                 <img src={kaemonProfile} alt="Kaemon Lovendahl" />
               </NavProfile>
               <p>Kaemon Lovendahl</p>
-              <p>Front End Developer</p>
+              <p>{title}</p>
             </NavTitle>
           </StyledLink>
 
