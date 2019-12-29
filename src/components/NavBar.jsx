@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 import FocusLock from 'react-focus-lock'
 import { Link } from 'react-router-dom'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
-import { IconLink } from './iconLink/IconLink'
+import { IconLink } from './IconLink'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
 
@@ -50,6 +50,19 @@ const NavTitle = styled.div`
   }
   & > p:first-of-type {
     border-bottom: 0.1rem solid white;
+  }
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: white;
   }
 `
 
@@ -124,12 +137,19 @@ const Background = styled.div`
   top: 0;
   left: 0;
   z-index: 450;
-  width: 150%;
-  height: 150%;
+  width: 1000%;
+  height: 1000%;
   opacity: 0.5;
   animation-name: ${fadeIn};
   animation-duration: 300ms;
 `
+
+const navLinks = [
+  { path: '/', title: 'Home' },
+  { path: '/projects', title: 'Projects' },
+  { path: '/about', title: 'About Me' },
+  { path: '/character-sheet', title: 'Character Sheet' },
+]
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -148,27 +168,24 @@ export const NavBar = () => {
     <FocusLock disabled={!isOpen}>
       <StyledNav isOpen={isOpen}>
         <NavContainer id="navbar-menu" role="menu" tabIndex="0">
-          <NavTitle>
-            <NavProfile>
-              <img src={kaemonProfile} alt="Kaemon Lovendahl" />
-            </NavProfile>
-            <p>Kaemon Lovendahl</p>
-            <p>Front End Developer</p>
-          </NavTitle>
+          <StyledLink to="/">
+            <NavTitle>
+              <NavProfile>
+                <img src={kaemonProfile} alt="Kaemon Lovendahl" />
+              </NavProfile>
+              <p>Kaemon Lovendahl</p>
+              <p>Front End Developer</p>
+            </NavTitle>
+          </StyledLink>
 
           <ul>
-            <NavLink>
-              <Link to="/">Home</Link>
-            </NavLink>
-            <NavLink>
-              <Link to="/projects">Projects</Link>
-            </NavLink>
-            <NavLink>
-              <Link to="/about">About Me</Link>
-            </NavLink>
-            <NavLink>
-              <Link to="/character-sheet">Character Sheet</Link>
-            </NavLink>
+            {navLinks.map(({ path, title }, i) => (
+              <NavLink key={i}>
+                <Link to={path} onClick={closeNav}>
+                  {title}
+                </Link>
+              </NavLink>
+            ))}
           </ul>
 
           <MediaLink>

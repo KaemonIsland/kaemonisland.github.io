@@ -1,1 +1,1 @@
-module.exports = require('./node_modules/eslint-config-warlock/prettier')
+module.exports = require('warlock-config/prettier')

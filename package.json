@@ -28,6 +28,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-warlock": "^1.3.5"
+    "warlock-config": "^1.0.0"
   }
 }

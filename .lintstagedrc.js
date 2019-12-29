@@ -1,1 +1,1 @@
-module.exports = require('./node_modules/eslint-config-warlock/lintstaged')
+module.exports = require('warlock-config/lintstaged')
