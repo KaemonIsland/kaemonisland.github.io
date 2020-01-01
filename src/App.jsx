@@ -9,6 +9,7 @@ export const App = () => (
     <NavBar />
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/portfolio" component={Home} />
       <Route exact path="/about" component={AboutMe} />
       <Route exact path="/projects" component={MyJam} />
       <Route exact path="/character-sheet" component={CharacterSheet} />
