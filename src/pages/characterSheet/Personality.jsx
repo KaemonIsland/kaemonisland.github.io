@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Disclosure } from '../../components'
 
 const PersonalityContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
   background-color: ${({ theme }) => theme.palette.primary.light};
   border-radius: 0.5rem;
   box-shadow: ${({ theme }) => theme.shadow.gray.small};
