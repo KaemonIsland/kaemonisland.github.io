@@ -9,19 +9,16 @@ import { useAlternatingText } from '../hooks'
 import navBackground from '../assets/images/connectwork.png'
 import kaemonProfile from '../assets/images/Portrait.jpg'
 
-// prettier-ignore
 const StyledNav = styled.nav`
   width: 18rem;
-  height: 100%;
+  height: 100vh;
   font-size: 2rem;
   color: white;
   border-right: 0.2rem solid white;
   background-image: url(${navBackground});
   position: fixed;
   top: 0;
-  left: ${({ isOpen }) => isOpen
-    ? '0'
-    : '-18rem'};
+  left: ${({ isOpen }) => (isOpen ? '0' : '-18rem')};
   transition: all 300ms ease-in;
   background-repeat: repeat;
   padding: 0.5rem 0;
@@ -31,7 +28,7 @@ const StyledNav = styled.nav`
 `
 const NavContainer = styled.div`
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -134,12 +131,12 @@ const fadeIn = keyframes`
 const Background = styled.div`
   background-color: black;
   background-position: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 450;
-  width: 1000%;
-  height: 1000%;
+  width: 100vw;
+  height: 100vh;
   opacity: 0.5;
   animation-name: ${fadeIn};
   animation-duration: 300ms;
