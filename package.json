@@ -2,7 +2,7 @@
   "name": "kaemonportfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kaemonisland.github.io/portfolio",
+  "homepage": "http://kaemonisland.github.io",
   "dependencies": {
     "axios": "^0.19.0",
     "node-sass": "^4.9.3",
