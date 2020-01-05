@@ -37,10 +37,6 @@ dd {
   padding: 0;
 }
 
-body {
-  padding: 0 1rem;
-}
-
 /* Set core body defaults */
 body {
   min-height: 100vh;

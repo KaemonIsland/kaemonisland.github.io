@@ -144,7 +144,7 @@ const Background = styled.div`
 
 const navLinks = [
   { path: '/', title: 'Home' },
-  { path: '/projects', title: 'Projects' },
+  { path: '/portfolio', title: 'Portfolio' },
   { path: '/about', title: 'About Me' },
   { path: '/character-sheet', title: 'Character Sheet' },
 ]
