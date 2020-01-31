@@ -9145,9 +9145,9 @@ react-focus-lock@^2.2.1:
     use-sidecar "^1.0.1"
 
 react-icons@^3.1.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.8.0.tgz#229de5904809696c9f46932bd9b6126b2522866e"
-  integrity sha512-rA/8GRKjPulft8BSBSMsHkE1AGPqJ7LjNsyk0BE7XjG70Iz62zOled2SJk7LDo8x9z86a3xOstDlKlMZ4pAy7A==
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.9.0.tgz#89a00f20a0e02e6bfd899977eaf46eb4624239d5"
+  integrity sha512-gKbYKR+4QsD3PmIHLAM9TDDpnaTsr3XZeK1NTAb6WQQ+gxEdJ0xuCgLq0pxXdS7Utg2AIpcVhM1ut/jlDhcyNg==
   dependencies:
     camelcase "^5.0.0"
 
@@ -11188,10 +11188,10 @@ warlock-config@^1.0.0:
     lint-staged "^9.5.0"
     prettier "^1.19.1"
 
-warlock-ui@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/warlock-ui/-/warlock-ui-0.0.9.tgz#2594dffe44c1194d3ae7903fc0e08aa1c08c6118"
-  integrity sha512-lL2qdlXM3LzTCY1OTtQyHdx/e45KP60R4ZNHS8kfZgkwxZuo4XTNndd/QWVSwvVobCWgnUF7kADkCALKTCL2tQ==
+warlock-ui@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/warlock-ui/-/warlock-ui-0.1.2.tgz#68e05686fec90b5cf595cf507d48088992aa2400"
+  integrity sha512-ibtHtPUm5s+zOl0KD+/GdBrYA5FeaPUW9pv6avs6775XroNFXq6LynHGjAcRz9J9iyTWajkCM18HFPfyL39adw==
 
 watchpack@^1.6.0:
   version "1.6.0"

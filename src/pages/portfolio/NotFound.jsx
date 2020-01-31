@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Fallback } from '../../components'
+import { Fallback } from 'warlock-ui'
 import theQuiz from '../../assets/images/undraw_quiz.png'
 
 export const NotFound = () => (

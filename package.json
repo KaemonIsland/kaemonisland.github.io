@@ -15,7 +15,7 @@
     "react-scripts": "^3.3.0",
     "scroll-lock": "^2.1.2",
     "styled-components": "^4.4.0",
-    "warlock-ui": "^0.0.9"
+    "warlock-ui": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

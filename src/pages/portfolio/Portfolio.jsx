@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { Nav, NotFound } from '.'
 import { MyJam } from '../myJam'
-import { Divider } from '../../elements'
+import { Divider } from 'warlock-ui'
 
 export const Portfolio = () => {
   return (

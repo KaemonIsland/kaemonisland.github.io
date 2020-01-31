@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Button, Input } from '../elements'
+import { Button } from 'warlock-ui'
+import { Input } from '../elements'
 
 const StyledSearch = styled.div`
   display: flex;

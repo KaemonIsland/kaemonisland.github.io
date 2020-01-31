@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Disclosure } from '../../components'
+import { Disclosure } from 'warlock-ui'
 
 const PersonalityContainer = styled.div`
   width: 90%;

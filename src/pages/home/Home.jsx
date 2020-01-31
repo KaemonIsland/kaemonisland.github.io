@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex } from '../../layout/Flex'
+import { Flex } from 'warlock-ui'
 import foggyWoods from '../../assets/images/annie-spratt-fog-unsplash.jpg'
 
 const Background = styled.div`

@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { TrackList } from './trackList/TrackList'
-import { Button, Input } from '../../elements'
+import { Button } from 'warlock-ui'
+import { Input } from '../../elements'
 
 const PlaylistContainer = styled.div`
   position: relative;

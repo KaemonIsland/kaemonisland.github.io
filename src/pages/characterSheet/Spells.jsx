@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Flex } from '../../layout'
+import { Container, Flex } from 'warlock-ui'
 
 const SpellsContainer = styled.div`
   color: blue;
