@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Button } from 'warlock-ui'
-import { Input } from '../elements'
+import { Input } from '../../elements'
 
-const StyledSearch = styled.div`
+const StyledSearch = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,8 @@ const StyledSearch = styled.div`
 export const SearchBar = ({ onSearch }) => {
   const [term, setTerm] = useState('')
 
-  const search = () => {
+  const search = e => {
+    e.preventDefault()
     onSearch(term)
     setTerm('')
   }
@@ -25,14 +26,17 @@ export const SearchBar = ({ onSearch }) => {
 
   return (
     <StyledSearch>
-      <Input
-        placeholder="Enter a Song, Album, or Artist"
-        value={term}
-        callback={handleTermChange}
-        shadowColor="primary"
-        width="20rem"
-      />
-      <Button callback={search} title="SEARCH" />
+      <form onSubmit={search}>
+        <Input
+          type="search"
+          placeholder="Enter a Song, Album, or Artist"
+          value={term}
+          callback={handleTermChange}
+          shadowColor="primary"
+          width="20rem"
+        />
+        <Button type="submit" title="SEARCH" />
+      </form>
     </StyledSearch>
   )
 }

@@ -24,6 +24,7 @@ export const Input = ({
   placeholder = '',
   shadowColor = 'gray',
   width,
+  ...props
 }) => {
   const inputStyles = {
     width,
@@ -34,6 +35,7 @@ export const Input = ({
       value={value}
       onChange={({ target }) => callback(target)}
       placeholder={placeholder}
+      {...props}
       {...inputStyles}
     />
   )

@@ -15,15 +15,17 @@ const SearchContainer = styled.div`
   box-shadow: ${({ theme }) => theme.shadow.primary.medium};
   & > h3 {
     font-size: 1.5rem;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid hsl(0, 0%, 55%);
   }
 `
 
 export const SearchResults = ({ searchResults, onAdd }) => (
-  <SearchContainer>
-    <h3>Search Results</h3>
-    <TrackList tracks={searchResults} onAdd={onAdd} isRemoval={false} />
-  </SearchContainer>
+  <>
+    <SearchContainer>
+      <h3>Search Results</h3>
+      <TrackList tracks={searchResults} onAdd={onAdd} isRemoval={false} />
+    </SearchContainer>
+  </>
 )
 
 export default SearchResults

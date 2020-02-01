@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import { NavBar } from './components/NavBar'
-import { Home, CharacterSheet, NotFound, AboutMe, Portfolio } from './pages'
+import { Home, NotFound, AboutMe, Portfolio } from './pages'
 
 export const App = () => (
   <div>
@@ -11,7 +11,7 @@ export const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/portfolio" component={Portfolio} />
       <Route exact path="/about" component={AboutMe} />
-      <Route exact path="/character-sheet" component={CharacterSheet} />
+      {/* <Route exact path="/character-sheet" component={CharacterSheet} /> */}
       <Route component={NotFound} />
     </Switch>
   </div>

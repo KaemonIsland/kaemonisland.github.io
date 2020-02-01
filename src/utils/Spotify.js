@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const clientId = '43585f07f1874d138fad92fc43e25663'
 // const redirectUri = 'http://kaemon-jammming.surge.sh/'
-const redirectUri = 'http://localhost:3000/'
+const redirectUri = 'http://localhost:3000/portfolio/my-jam'
 
 let accessToken
 

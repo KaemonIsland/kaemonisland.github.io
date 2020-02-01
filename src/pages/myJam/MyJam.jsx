@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { SearchBar } from '../../components/SearchBar'
+import { SearchBar } from './SearchBar'
 import { SearchResults } from './SearchResults'
 import { Playlist } from './Playlist'
 
 import Spotify from '../../utils/Spotify'
 
 const MyJamContainer = styled.section`
-  height: 100vh;
+  height: 90vh;
   color: black;
   background-color: white;
   text-align: center;

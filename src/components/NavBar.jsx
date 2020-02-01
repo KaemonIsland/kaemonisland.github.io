@@ -146,7 +146,7 @@ const navLinks = [
   { path: '/', title: 'Home' },
   { path: '/portfolio', title: 'Portfolio' },
   { path: '/about', title: 'About Me' },
-  { path: '/character-sheet', title: 'Character Sheet' },
+  //  { path: '/character-sheet', title: 'Character Sheet' },
 ]
 
 export const NavBar = () => {
@@ -172,46 +172,48 @@ export const NavBar = () => {
   }
 
   return (
-    <FocusLock disabled={!isOpen}>
+    <>
       <StyledNav isOpen={isOpen}>
-        <NavContainer id="navbar-menu" role="menu" tabIndex="0">
-          <StyledLink to="/">
-            <NavTitle>
-              <NavProfile>
-                <img src={kaemonProfile} alt="Kaemon Lovendahl" />
-              </NavProfile>
-              <p>Kaemon Lovendahl</p>
-              <p>{title}</p>
-            </NavTitle>
-          </StyledLink>
+        <FocusLock disabled={!isOpen}>
+          <NavContainer id="navbar-menu" role="menu" tabIndex="0">
+            <StyledLink to="/">
+              <NavTitle>
+                <NavProfile>
+                  <img src={kaemonProfile} alt="Kaemon Lovendahl" />
+                </NavProfile>
+                <p>Kaemon Lovendahl</p>
+                <p>{title}</p>
+              </NavTitle>
+            </StyledLink>
 
-          <ul>
-            {navLinks.map(({ path, title }, i) => (
-              <NavLink key={i}>
-                <Link to={path} onClick={closeNav}>
-                  {title}
-                </Link>
-              </NavLink>
-            ))}
-          </ul>
+            <ul>
+              {navLinks.map(({ path, title }, i) => (
+                <NavLink key={i}>
+                  <Link to={path} onClick={closeNav}>
+                    {title}
+                  </Link>
+                </NavLink>
+              ))}
+            </ul>
 
-          <MediaLink>
-            <IconLink link="github" />
-            <IconLink link="twitter" />
-            <IconLink link="linkedin" />
-            <IconLink link="email" />
-          </MediaLink>
-        </NavContainer>
+            <MediaLink>
+              <IconLink link="github" />
+              <IconLink link="twitter" />
+              <IconLink link="linkedin" />
+              <IconLink link="email" />
+            </MediaLink>
+          </NavContainer>
 
-        <NavButton
-          onClick={isOpen ? closeNav : openNav}
-          role="button"
-          aria-controls="navbar-menu"
-        >
-          {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
-        </NavButton>
+          <NavButton
+            onClick={isOpen ? closeNav : openNav}
+            role="button"
+            aria-controls="navbar-menu"
+          >
+            {isOpen ? <FaArrowRight /> : <FaArrowLeft />}
+          </NavButton>
+        </FocusLock>
       </StyledNav>
       {isOpen && <Background onClick={closeNav} />}
-    </FocusLock>
+    </>
   )
 }

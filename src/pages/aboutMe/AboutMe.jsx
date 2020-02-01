@@ -29,6 +29,7 @@ const StyledAbout = styled.p`
 `
 
 const StyledLink = styled.a`
+  transition: all 300ms linear;
   color: ${({ theme }) => theme.palette.primary.main};
   text-decoration: none;
 
