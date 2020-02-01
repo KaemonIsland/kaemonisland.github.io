@@ -8,7 +8,6 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  margin: 0 -1rem;
   width: 100vw;
   height: 100vh;
 `

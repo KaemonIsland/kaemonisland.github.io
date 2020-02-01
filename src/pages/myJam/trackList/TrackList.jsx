@@ -4,7 +4,10 @@ import styled from 'styled-components'
 import { Track } from './track/Track'
 
 const TrackListContainer = styled.div`
-  max-height: 20rem;
+  height: 15rem;
+  max-width: 45rem;
+  width: 90vw;
+  min-width: 8rem;
   overflow-y: scroll;
   scrollbar-width: none;
   & div:not(:last-child) {

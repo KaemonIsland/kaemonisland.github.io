@@ -11,6 +11,7 @@ const PortfolioNav = styled.nav(({ theme }) => ({
   top: 0,
   left: 0,
   width: '100%',
+  zIndex: 100,
   '& a': {
     color: 'white',
     textDecoration: 'none',

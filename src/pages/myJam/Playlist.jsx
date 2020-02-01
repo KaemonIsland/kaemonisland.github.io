@@ -6,14 +6,11 @@ import { Button } from 'warlock-ui'
 import { Input } from '../../elements'
 
 const PlaylistContainer = styled.div`
-  position: relative;
   padding: 0.5rem;
-  margin: 1.5rem;
-  width: 40%;
   min-width: 20rem;
   background-color: ${({ theme }) => theme.palette.primary.light};
   border: 2px solid black;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: ${({ theme }) => theme.shadow.primary.medium};
 `
 
@@ -29,15 +26,17 @@ export const Playlist = ({
   }
 
   return (
-    <PlaylistContainer>
+    <div>
       <Input
         placeholder="Enter Playlist Title"
         value={playlist}
         callback={handleNameChange}
       />
-      <TrackList tracks={playlistTracks} onRemove={onRemove} isRemoval />
       <Button callback={onSave} title="SAVE TO SPOTIFY" />
-    </PlaylistContainer>
+      <PlaylistContainer>
+        <TrackList tracks={playlistTracks} onRemove={onRemove} isRemoval />
+      </PlaylistContainer>
+    </div>
   )
 }
 

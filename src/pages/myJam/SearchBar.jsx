@@ -18,8 +18,10 @@ export const SearchBar = ({ onSearch }) => {
 
   const search = e => {
     e.preventDefault()
-    onSearch(term)
-    setTerm('')
+    if (term) {
+      onSearch(term)
+      setTerm('')
+    }
   }
 
   const handleTermChange = ({ value }) => setTerm(value)

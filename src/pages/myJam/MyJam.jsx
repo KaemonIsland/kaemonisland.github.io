@@ -7,7 +7,8 @@ import { Playlist } from './Playlist'
 import Spotify from '../../utils/Spotify'
 
 const MyJamContainer = styled.section`
-  height: 90vh;
+  height: 100%;
+  padding-bottom: 1rem;
   color: black;
   background-color: white;
   text-align: center;
@@ -21,7 +22,9 @@ const MyJamContainer = styled.section`
 
 const ResultsContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 `
 
