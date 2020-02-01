@@ -30,18 +30,40 @@ export const MyJam = () => {
   const [playlistName, setPlaylistName] = useState('New Playlist')
   const [playlistTracks, setPlaylistTracks] = useState([])
 
+  /**
+   * Sorts an array of tracks by name
+   * @param {object} track - array of track objects
+   */
+  const sortTracks = (trackA, trackB) => {
+    return trackA.name.toUpperCase() > trackB.name.toUpperCase() ? 1 : -1
+  }
+
+  /**
+   * Returns true if a track is within the array
+   * @param {array} trackArr - list of tracks to search
+   * @param {integer} trackId - track id to find
+   */
+  const isTrackPresent = (trackArr, trackId) =>
+    trackArr.find(track => track.id === trackId)
+
   const addTrack = track => {
-    if (!playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
-      setPlaylistTracks([...playlistTracks, track])
+    if (!isTrackPresent(playlistTracks, track.id)) {
+      setPlaylistTracks(playlistTracks => [...playlistTracks, track])
+      setResults(currentResults =>
+        currentResults
+          .filter(resultsTrack => resultsTrack.id !== track.id)
+          .sort(sortTracks)
+      )
     }
   }
 
-  const removeTrack = ({ id }) => {
-    // prettier-ignore
-    setPlaylistTracks(
-      playlistTracks
-        .filter(currentTrack => currentTrack.id !== id),
-    )
+  const removeTrack = track => {
+    if (isTrackPresent(playlistTracks, track.id)) {
+      setPlaylistTracks(playlistTracks =>
+        playlistTracks.filter(currentTrack => currentTrack.id !== track.id)
+      )
+      setResults(results => [...results, track].sort(sortTracks))
+    }
   }
 
   const updatePlaylistName = name => setPlaylistName(name)
@@ -55,7 +77,7 @@ export const MyJam = () => {
 
   const search = term => {
     Spotify.search(term).then(searchResults => {
-      setResults([...searchResults])
+      setResults([...searchResults].sort(sortTracks))
     })
   }
 
